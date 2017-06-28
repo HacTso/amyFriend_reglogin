@@ -1,0 +1,20 @@
+<div class="greenBorder">
+  <h3>New Component</h3>
+  <a [routerLink]="['/dashboard']" class="btn btn-primary">Dashboard</a>
+  <div  *ngIf="errors" class="red">{{ errors }}</div>
+  <form (submit) = 'createFriend()'>
+    <div class="form-group">
+      <label for="first_name">First name:</label>
+      <input type="text" name="first_name" [(ngModel)] = 'newFriend.first_name' class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last name:</label>
+      <input type="text" name="last_name" [(ngModel)] = 'newFriend.last_name' class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="birthday"> Birthday:</label>
+      <input type="date" name="birthday" [(ngModel)] = 'newFriend.birthday' class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Create a FRIEND!</button>
+  </form>
+</div>

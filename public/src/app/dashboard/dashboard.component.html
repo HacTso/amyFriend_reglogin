@@ -1,0 +1,36 @@
+<div class="blueBorder">
+  <h3>Dashboard</h3>
+  <h2>Hello {{ name }} {{ userid }}</h2>
+<button (click)='logout()' class="btn btn-primary">Logout</button>
+  <a [routerLink]="['/new']" class="btn btn-primary">Create a New friend!</a>
+  <div *ngIf = 'errors'>
+    <p>{{ errors }}</p>
+  </div>
+  <div id="friendsmenu">
+    <div *ngIf = 'friends'>
+      <table class="table table-striped">
+        <thead>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Birthday</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let f of friends'>
+            <td>{{ f.first_name }}</td>
+            <td>{{ f.last_name }}</td>
+            <td>{{ f.birthday | date: "longDate" }}</td>
+            <td>
+              <a [routerLink]="['/show', f._id]">SHOW</a>
+              <a [routerLink]="['/edit', f._id]">EDIT</a>
+              <a (click) ='delete(f._id)'>DELETE</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+  </div>
+</div>
+
+ <!--{{ friends.friend }}-->
+  <!--{{ errors }}-->

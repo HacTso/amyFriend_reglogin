@@ -1,0 +1,52 @@
+
+
+
+<div class="aquaBorder">
+  <h3>Show Component</h3>
+  <a [routerLink]="['/dashboard']" class="btn btn-primary">Dashboard</a> | <a [routerLink]="['/edit', showFriendId]" class="btn btn-primary">EDIT</a><br>
+  <div *ngIf = 'errors'>
+    <p>{{ errors }}</p>
+  </div>
+  <div *ngIf = 'showFriend'>
+    <!--for first name-->
+    <div class="row">
+      <div class="col-md-2">
+        <p>First name:</p>
+      </div>
+      <div class="col-md-10">
+        <p>{{ showFriend.first_name }}</p>
+      </div>
+    </div>
+      <!--for last name-->
+    <div class="row">
+      <div class="col-md-2">
+        <p>Last name:</p>
+      </div>
+      <div class="col-md-10">
+        <p>{{ showFriend.last_name }}</p>
+      </div>
+    </div>
+      <!--for birthday-->
+    <div class="row">
+      <div class="col-md-2">
+        <p>Birthday:</p>
+      </div>
+      <div class="col-md-10">
+        <p>{{ showFriend.birthday | date: 'longDate'}}</p>
+      </div>
+    </div>
+      <!--for friendship-->
+    <div class="row">
+      <div class="col-md-2">
+        <p>Friend since:</p>
+      </div>
+      <div class="col-md-10">
+        <p>{{ showFriend.createdAt | date: 'longDate'}}</p>
+      </div>
+    </div>
+  </div>
+  <a [routerLink]="['/new']" class="btn btn-primary">Create a New friend</a>  AFTER reviewing someone!
+</div>
+
+
+  <!--{{ showFriendId }} for detection only-->

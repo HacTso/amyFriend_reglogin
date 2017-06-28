@@ -1,0 +1,11 @@
+.blueBorder {
+    border: 5px solid blue;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#friendsmenu {
+    height: 400px;
+    width: 600px;
+    overflow: scroll;
+}

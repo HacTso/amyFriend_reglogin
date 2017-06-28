@@ -1,0 +1,23 @@
+<div class="orangeBorder">
+  <h3>Edit Component</h3>
+  <a [routerLink]="['/dashboard']" class="btn btn-primary">Dashboard</a>    <a [routerLink]="['/new']" class="btn btn-primary">Create a New friend!</a>
+  <div *ngIf="errors">{{ errors }}</div>
+  <div *ngIf="editFriend">
+    <form (submit) = 'updateFriend()'>
+      <div class="form-group">
+        <label for="first_name">First name:</label>
+        <input type="text" name="first_name" [(ngModel)] = 'editFriend.first_name' class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last name:</label>
+        <input type="text" name="last_name" [(ngModel)] = 'editFriend.last_name' class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="birthday"> Birthday:</label>
+        <input type="date" name="birthday" [ngModel] = "editFriend.birthday | date: 'yyyy-MM-dd'" (ngModelChange) = 'editFriend.birthday = $event' class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">UPDATE</button>
+    </form>
+  </div>
+</div>
+
